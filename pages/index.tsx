@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Aqui Decimos</title>
+        <title>Iglesia Antorcha de Fuego - Concilio Aposento Alto</title>
         <meta name="description" content={tagDescription} />
         <meta itemProp="name" content={tagTitle} />
         <meta itemProp="description" content={tagDescription} />
