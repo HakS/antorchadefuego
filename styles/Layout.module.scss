@@ -1,0 +1,53 @@
+.mainWrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.pageMaxWidth {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.mainHeader {
+  background: #396290;
+  padding: 2rem 0;
+  &__inner {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    nav {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: flex-end;
+      flex-grow: 1;
+      gap: 1rem;
+      a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.25rem;
+      }
+    }
+  }
+}
+
+.mainContent {
+  padding-top: 1.5rem;
+  overflow: hidden;
+  flex-grow: 1;
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 1rem;
+    > main {
+      width: 100%;
+    }
+  }
+}
+
+.mainFooter {
+  padding: 1rem 0;
+}
