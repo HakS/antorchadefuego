@@ -4,7 +4,7 @@ import Image from "next/image";
 import { FaFacebook, FaInstagram} from "react-icons/fa";
 import styles from "../styles/Layout.module.scss"
 
-export default ({children}: {children: React.ReactNode}) => {
+const Layout = ({children}: {children: React.ReactNode}) => {
   return (
     <>
       <Head>
@@ -42,3 +42,5 @@ export default ({children}: {children: React.ReactNode}) => {
     </>
   );
 };
+
+export default Layout;
