@@ -3,8 +3,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaFacebook, FaInstagram} from "react-icons/fa";
 import styles from "../styles/Layout.module.scss"
+import topImage from "../assets/images/worship3.jpeg";
 
-const Layout = ({children}: {children: React.ReactNode}) => {
+type LayoutProps = {
+  fullScreen ?: boolean;
+  topContent ?: React.ReactNode;
+  children: React.ReactNode;
+};
+const Layout = ({fullScreen = false, topContent, children}: LayoutProps) => {
   return (
     <>
       <Head>
@@ -12,8 +18,8 @@ const Layout = ({children}: {children: React.ReactNode}) => {
         <meta property="og:site_name" content="Iglesia Antorcha de Fuego - Concilio Aposento Alto"></meta>
       </Head>
       <div className={styles.mainWrapper}>
-        <header className={styles.mainHeader}>
-          <div className={`${styles.mainHeader__inner} ${styles.pageMaxWidth}`}>
+        <header className={`${styles.mainHeader} ${fullScreen && styles.mainHeader__full}`}>
+          <div className={styles.mainHeader_inner}>
             <Link href="/" className="mb-0 inline-flex">
               <Image src="/logo.png" width={218} height={75} alt="Iglesia Antorcha de Fuego - Concilio Aposento Alto" />
             </Link>
@@ -25,8 +31,14 @@ const Layout = ({children}: {children: React.ReactNode}) => {
             </nav>
           </div>
         </header>
+        <div className={`${styles.mainImage} ${fullScreen && styles.mainImage__full}`}>
+          <Image src={topImage} fill={true} alt="Iglesia Antorcha de Fuego - Concilio Aposento Alto" placeholder="blur"/>
+        </div>
+        <div className={styles.topContent}>
+          {topContent}
+        </div>
         <div className={styles.mainContent}>
-          <div className={`${styles.pageMaxWidth} ${styles.mainContent__inner}`}>
+          <div className={`${styles.pageMaxWidth} ${styles.mainContent_inner}`}>
             <main>{children}</main>
           </div>
         </div>
