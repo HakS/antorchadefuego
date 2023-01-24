@@ -1,3 +1,46 @@
+$top-img-height: 575px;
+
+
+.outerContainer {
+  position: relative;
+}
+
+.mobileSidebar {
+  transition: left 1s ease;
+  width: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100vh;
+  background: #5f626c;
+  z-index: 101;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.pageWrap {
+}
+
+.pageOverlay {
+  transition: opacity 1s ease;
+  background-color: black;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+
 .mainWrapper {
   display: flex;
   flex-direction: column;
@@ -11,7 +54,8 @@
 
 .mainHeader {
   padding: .75rem 0;
-  position: relative;
+  position: fixed;
+  width: 100%;
   &_inner {
     margin: 0 auto;
     max-width: 95%;
@@ -44,15 +88,16 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 575px;
+  height: $top-img-height;
   overflow: hidden;
   z-index: -1;
   > img {
     aspect-ratio: 40 / 17;
-    min-height: 575px;
+    min-height: $top-img-height;
     width: auto !important;
     height: auto !important;
-    transform: translate(-50%, -50%) scale(1.1);
+    min-width: 100%;
+    transform: translate(-50%, -50%);
     top: 50% !important;
     left: 50% !important;
   }
@@ -84,8 +129,10 @@
   width: calc(100% - 120px);
   max-width: 800px;
   margin: 0 auto;
-  padding: 7rem 0 0;
-  height: 472px;
+  height: $top-img-height;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .mainFooter {
