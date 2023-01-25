@@ -1,5 +1,8 @@
-$top-img-height: 575px;
+@import "breakpoint-sass";
 
+$top-img-height: 575px;
+$sm: 576px;
+$md: 768px;
 
 .outerContainer {
   position: relative;
@@ -61,20 +64,33 @@ $top-img-height: 575px;
     max-width: 95%;
     display: flex;
     flex-wrap: nowrap;
+    justify-content: space-between;
     gap: 1rem;
     nav {
-      display: flex;
       flex-wrap: nowrap;
       align-items: center;
       justify-content: flex-end;
       flex-grow: 1;
       gap: 1rem;
+      display: none;
+      @include breakpoint($md) {
+        display: flex;
+      }
       a {
         color: white;
         text-decoration: none;
         font-size: 1rem;
         text-transform: uppercase;
         font-weight: 600;
+      }
+    }
+    button {
+      display: block;
+      @include breakpoint($md) {
+        display: none;
+      }
+      svg {
+        fill: white;
       }
     }
   }
