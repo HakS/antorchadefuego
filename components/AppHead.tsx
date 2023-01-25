@@ -8,7 +8,7 @@ type LayoutProps = {
   tagImage?: string;
 };
 
-export default ({
+const AppHead = ({
   title = "",
   tagDescription = '"Predicando el evangelio de Jesucristo a toda nación, pueblo y lengua."',
   tagImage = `${getAbsUrl()}/social-share-img.png`,
@@ -38,3 +38,5 @@ export default ({
     </Head>
   );
 };
+
+export default AppHead;
