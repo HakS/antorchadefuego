@@ -4,6 +4,7 @@ import Image from "next/image";
 import { FaFacebook, FaInstagram} from "react-icons/fa";
 import styles from "../styles/Layout.module.scss"
 import topImage from "../assets/images/worship3.jpeg";
+import { useState } from "react";
 
 type LayoutProps = {
   fullScreen ?: boolean;
@@ -23,6 +24,30 @@ const MenuLinks = () => {
 }
 
 const Layout = ({fullScreen = false, topContent, children}: LayoutProps) => {
+
+  const [activeMenu, setActiveMenu] = useState(false);
+  const [menuChanging, setMenuChanging] = useState(false);
+  let menuTimeout: NodeJS.Timeout;
+
+  const toogleMenu = () => {
+    if (!activeMenu) {
+      setActiveMenu(true);
+      setMenuChanging(true);
+      if (menuTimeout) clearTimeout(menuTimeout);
+      menuTimeout = setTimeout(() => setMenuChanging(false), 600);
+    }
+    else {
+      closeMenu();
+    }
+  }
+
+  const closeMenu = () => {
+    setMenuChanging(true);
+    setActiveMenu(false);
+    if (menuTimeout) clearTimeout(menuTimeout);
+    menuTimeout = setTimeout(() => setMenuChanging(false), 600);
+  }
+
   return (
     <>
       <Head>
@@ -33,7 +58,11 @@ const Layout = ({fullScreen = false, topContent, children}: LayoutProps) => {
         ></meta>
       </Head>
       <div className={styles.outerContainer}>
-        <nav className={styles.mobileSidebar}>
+        <nav
+          className={styles.mobileSidebar}
+          data-active={activeMenu}
+          data-changing={menuChanging}
+        >
           <MenuLinks />
         </nav>
         <div className={styles.pageWrap}>
@@ -55,7 +84,7 @@ const Layout = ({fullScreen = false, topContent, children}: LayoutProps) => {
                 <nav>
                   <MenuLinks />
                 </nav>
-                <button onClick={() => console.log("CLICKED")}>
+                <button onClick={() => toogleMenu()}>
                   <svg viewBox="0 0 100 80" width="40" height="40">
                     <rect width="100" height="20" rx="8"></rect>
                     <rect y="30" width="100" height="20" rx="8"></rect>
@@ -94,7 +123,12 @@ const Layout = ({fullScreen = false, topContent, children}: LayoutProps) => {
             </div>
           </div>
         </div>
-        <div className={styles.pageOverlay}></div>
+        <div
+          className={styles.pageOverlay}
+          data-active={activeMenu}
+          data-changing={menuChanging}
+          onClick={() => closeMenu()}
+        />
       </div>
     </>
   );
