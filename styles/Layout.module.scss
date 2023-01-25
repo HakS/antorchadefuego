@@ -1,6 +1,6 @@
 @import "../styles/init.scss";
 
-$top-img-height: 575px;
+$top-img-height: 500px;
 
 .outerContainer {
   position: relative;
@@ -169,7 +169,11 @@ $top-img-height: 575px;
     height: 100vh;
   }
 }
+.defaultMainTitle {
+  font-size: calc(3.0vw + 1.6rem);
+}
 
 .mainFooter {
+  margin-top: 5rem;
   padding: 1rem 0;
 }

@@ -1,25 +1,12 @@
-import { getAbsUrl } from '../utils';
-import Layout from './Layout';
-import styles from './index.module.scss';
 import AppHead from '../components/AppHead';
+import Layout from './Layout';
 
 export default function Home() {
-  const topContent = (
-    <div className={styles.topContent}>
-      <h1>Mateo 17:20</h1>
-      <h2>
-        Porque de cierto os digo, que si tuviereis fe como un grano de
-        mostaza, diréis a este monte: Pásate de aquí allá, y se pasará; y nada
-        os será imposible.
-      </h2>
-    </div>
-  )
-
   return (
     <>
-      <AppHead />
-      <Layout fullScreen={true} topContent={topContent}>
-        <div className={`page-max-width page-padding ${styles.mainContent}`}>
+      <AppHead title='Emisora' />
+      <Layout topContent='Emisora'>
+        <div className={`page-max-width page-padding`}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit
           amet varius elit. Lorem ipsum dolor sit amet, consectetur adipiscing
           elit. Cras aliquet imperdiet risus ut venenatis. Etiam fermentum sed
