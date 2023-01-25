@@ -68,11 +68,6 @@ $top-img-height: 575px;
   min-height: 100vh;
 }
 
-.pageMaxWidth {
-  margin: 0 auto;
-  max-width: 1200px;
-}
-
 .mainHeader {
   padding: .75rem 0;
   position: fixed;
@@ -158,16 +153,7 @@ $top-img-height: 575px;
   flex-grow: 1;
   position: relative;
   font-size: 1.125rem;
-  &_inner {
-    display: flex;
-    flex-wrap: wrap;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin-top: 1rem;
-    > main {
-      width: 100%;
-    }
-  }
+  line-height: 1.75rem;;
 }
 .topContent {
   text-align: center;

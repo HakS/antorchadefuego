@@ -101,21 +101,15 @@ const Layout = ({fullScreen = false, topContent, children}: LayoutProps) => {
             <div className={styles.topContent} data-full-screen={fullScreen}>
               {topContent}
             </div>
-            <div className={styles.mainContent}>
-              <div
-                className={`${styles.pageMaxWidth} ${styles.mainContent_inner}`}
-              >
-                <main>{children}</main>
+            <main className={styles.mainContent}>
+              {children}
+            </main>
+            <footer className={styles.mainFooter}>
+              <div className="page-max-width page-padding">
+                Iglesia Antorcha de Fuego - Concilio Aposento Alto,{" "}
+                {new Date().getFullYear()} todos los derechos reservados.
               </div>
-            </div>
-            <div className={styles.mainFooter}>
-              <div className={`${styles.pageMaxWidth}`}>
-                <footer>
-                  Iglesia Antorcha de Fuego - Concilio Aposento Alto,{" "}
-                  {new Date().getFullYear()} todos los derechos reservados.
-                </footer>
-              </div>
-            </div>
+            </footer>
           </div>
         </div>
         <div

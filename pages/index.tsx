@@ -43,7 +43,7 @@ export default function Home() {
       </Head>
 
       <Layout fullScreen={true} topContent={topContent}>
-        <div>
+        <div className={`page-max-width page-padding ${styles.mainContent}`}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit
           amet varius elit. Lorem ipsum dolor sit amet, consectetur adipiscing
           elit. Cras aliquet imperdiet risus ut venenatis. Etiam fermentum sed

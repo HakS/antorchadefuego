@@ -14,3 +14,13 @@ button, input[type="submit"], input[type="reset"] {
 	all: unset;
   cursor: pointer;
 }
+
+.page-max-width {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.page-padding {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}

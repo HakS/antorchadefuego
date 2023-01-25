@@ -6,3 +6,9 @@
     font-size: calc(1vw + 1rem);
   }
 }
+
+.mainContent {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
