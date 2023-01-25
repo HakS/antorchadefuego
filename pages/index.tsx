@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router';
 import { getAbsUrl } from '../utils';
 import Layout from './Layout';
+import styles from './index.module.scss';
 
 export default function Home() {
   const router = useRouter();
@@ -11,14 +12,14 @@ export default function Home() {
   const tagImage = `${getAbsUrl()}/social-share-img.png`;
 
   const topContent = (
-    <>
+    <div className={styles.topContent}>
       <h1>Mateo 17:20</h1>
       <h2>
         Porque de cierto os digo, que si tuviereis fe como un grano de
         mostaza, diréis a este monte: Pásate de aquí allá, y se pasará; y nada
         os será imposible.
       </h2>
-    </>
+    </div>
   )
 
   return (
