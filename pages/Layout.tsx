@@ -64,12 +64,13 @@ const Layout = ({fullScreen = false, topContent, children}: LayoutProps) => {
           data-changing={menuChanging}
         >
           <MenuLinks />
+          <button onClick={() => closeMenu()}>×</button>
         </nav>
         <div className={styles.pageWrap}>
           <div className={styles.mainWrapper}>
             <header className={styles.mainHeader}>
               <div className={styles.mainHeader_inner}>
-                <Link href="/" className="mb-0 inline-flex">
+                <Link href="/">
                   <Image
                     src="/logo.png"
                     width={218}
