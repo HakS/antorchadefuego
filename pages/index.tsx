@@ -41,7 +41,7 @@ export default function Home() {
         <link rel="canonical" href={absUrl} />
       </Head>
 
-      <Layout fullScreen={false} topContent={topContent}>
+      <Layout fullScreen={true} topContent={topContent}>
         <div>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit
           amet varius elit. Lorem ipsum dolor sit amet, consectetur adipiscing

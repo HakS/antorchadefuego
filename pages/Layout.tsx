@@ -67,11 +67,7 @@ const Layout = ({fullScreen = false, topContent, children}: LayoutProps) => {
         </nav>
         <div className={styles.pageWrap}>
           <div className={styles.mainWrapper}>
-            <header
-              className={`${styles.mainHeader} ${
-                fullScreen && styles.mainHeader__full
-              }`}
-            >
+            <header className={styles.mainHeader}>
               <div className={styles.mainHeader_inner}>
                 <Link href="/" className="mb-0 inline-flex">
                   <Image
@@ -93,11 +89,7 @@ const Layout = ({fullScreen = false, topContent, children}: LayoutProps) => {
                 </button>
               </div>
             </header>
-            <div
-              className={`${styles.mainImage} ${
-                fullScreen && styles.mainImage__full
-              }`}
-            >
+            <div className={styles.mainImage} data-full-screen={fullScreen}>
               <Image
                 src={topImage}
                 fill={true}
@@ -105,7 +97,9 @@ const Layout = ({fullScreen = false, topContent, children}: LayoutProps) => {
                 placeholder="blur"
               />
             </div>
-            <div className={styles.topContent}>{topContent}</div>
+            <div className={styles.topContent} data-full-screen={fullScreen}>
+              {topContent}
+            </div>
             <div className={styles.mainContent}>
               <div
                 className={`${styles.pageMaxWidth} ${styles.mainContent_inner}`}
