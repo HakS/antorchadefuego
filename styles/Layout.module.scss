@@ -28,7 +28,7 @@ $top-img-height: 500px;
     color: $light;
     text-decoration: none;
     padding: 0.8em;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1.15em;
   }
   button {
@@ -86,6 +86,7 @@ $top-img-height: 500px;
     }
     > a {
       max-width: 218px;
+      max-height: 75px;
       aspect-ratio: 218 / 75;
       img {
         width: 100%;
@@ -107,7 +108,7 @@ $top-img-height: 500px;
         text-decoration: none;
         font-size: 1rem;
         text-transform: uppercase;
-        font-weight: 600;
+        font-weight: 400;
       }
     }
     button {
