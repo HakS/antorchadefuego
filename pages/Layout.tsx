@@ -134,6 +134,7 @@ const Layout = ({fullScreen = false, topContent = '', children}: LayoutProps) =>
                     <a
                       href="https://www.google.com/maps/place/Iglesia+Antorcha+de+Fuego/@11.0182769,-74.8052202,19z/data=!3m1!4b1!4m5!3m4!1s0x8ef42d6c100599b7:0xc146c2b6690fc56a!8m2!3d11.0182756!4d-74.8046731"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       Calle 80 #74-34, Barrio Paraíso, Barranquilla, Atlántico -
                       Colombia
@@ -149,12 +150,14 @@ const Layout = ({fullScreen = false, topContent = '', children}: LayoutProps) =>
                         <a
                           href="https://www.facebook.com/antorchade.fuegoemisora/"
                           target="_blank"
+                          rel="noreferrer"
                         >
                           <FaFacebook />
                         </a>
                         <a
                           href="https://www.youtube.com/channel/UChHN8gsvtH1ZoB1su2JgLAg/"
                           target="_blank"
+                          rel="noreferrer"
                         >
                           <FaYoutube />
                         </a>
