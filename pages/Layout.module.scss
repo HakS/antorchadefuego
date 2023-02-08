@@ -176,5 +176,77 @@ $top-img-height: 500px;
 
 .mainFooter {
   margin-top: 5rem;
+  color: $light;
+  background-color: darken($sky-blue, 5%);
+}
+
+.mainFooterInner {
+  $footer-padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: $footer-padding;
+  padding-top: $footer-padding;
+  padding-bottom: $footer-padding;
+  font-size: 1.2rem;
+}
+
+.footer1 {
+  display: grid;
+  grid-gap: 1.7rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  @include breakpoint($md) {
+    grid-template-columns: 225px 3.5fr 1fr 1fr;
+  }
+  > * {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    @include breakpoint($md) {
+      justify-content: flex-start;
+      text-align: left;
+    }
+    a {
+      color: lighten($sky-blue, 35%);
+      text-decoration: none;
+      &:hover {
+        color: lighten($sky-blue, 55%);
+      }
+    }
+  }
+  &_links {
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 2rem;
+    a {
+      width: 100%;
+    }
+  }
+  &_social {
+    h3 {
+      width: 100%;
+      margin: 0 0 0.5rem 0;
+    }
+    > div {
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      width: 100%;
+      flex-wrap: wrap;
+      > div {
+        display: flex;
+        gap: 0.4rem;
+      }
+    }
+  }
+}
+
+.footer2 {
   padding: 1rem 0;
+  background-color: darken($sky-blue, 15%);
+  text-align: center;
+  @include breakpoint($md) {
+    text-align: left;
+  }
 }

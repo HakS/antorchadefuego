@@ -1,8 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-import { FaFacebook, FaInstagram} from "react-icons/fa";
-import styles from "../styles/Layout.module.scss"
+import { FaFacebook, FaYoutube} from "react-icons/fa";
+import styles from "./Layout.module.scss"
 import topImage from "../assets/images/worship3.jpeg";
 import { useState } from "react";
 
@@ -116,10 +116,58 @@ const Layout = ({fullScreen = false, topContent = '', children}: LayoutProps) =>
               )}
             </div>
             <main className={styles.mainContent}>{children}</main>
+
             <footer className={styles.mainFooter}>
-              <div className="page-max-width page-padding">
-                Iglesia Antorcha de Fuego - Concilio Aposento Alto,{" "}
-                {new Date().getFullYear()} todos los derechos reservados.
+              <div
+                className={`page-max-width page-padding ${styles.mainFooterInner}`}
+              >
+                <div className={styles.footer1}>
+                  <div className={styles.footer1_logo}>
+                    <Image
+                      src="/logo.png"
+                      width={218}
+                      height={75}
+                      alt="Iglesia Antorcha de Fuego - Concilio Aposento Alto"
+                    />
+                  </div>
+                  <div className={styles.footer1_address}>
+                    <a
+                      href="https://www.google.com/maps/place/Iglesia+Antorcha+de+Fuego/@11.0182769,-74.8052202,19z/data=!3m1!4b1!4m5!3m4!1s0x8ef42d6c100599b7:0xc146c2b6690fc56a!8m2!3d11.0182756!4d-74.8046731"
+                      target="_blank"
+                    >
+                      Calle 80 #74-34, Barrio Paraíso, Barranquilla, Atlántico -
+                      Colombia
+                    </a>
+                  </div>
+                  <div className={styles.footer1_links}>
+                    <MenuLinks />
+                  </div>
+                  <div className={styles.footer1_social}>
+                    <div>
+                      <h3>Síguenos</h3>
+                      <div>
+                        <a
+                          href="https://www.facebook.com/antorchade.fuegoemisora/"
+                          target="_blank"
+                        >
+                          <FaFacebook />
+                        </a>
+                        <a
+                          href="https://www.youtube.com/channel/UChHN8gsvtH1ZoB1su2JgLAg/"
+                          target="_blank"
+                        >
+                          <FaYoutube />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className={`${styles.footer2}`}>
+                <div className={`page-max-width page-padding`}>
+                  Iglesia Antorcha de Fuego - Concilio Aposento Alto,{" "}
+                  {new Date().getFullYear()} todos los derechos reservados.
+                </div>
               </div>
             </footer>
           </div>
