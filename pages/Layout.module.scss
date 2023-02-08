@@ -69,10 +69,18 @@ $top-img-height: 500px;
 }
 
 .mainHeader {
-  padding: .75rem 0;
-  position: fixed;
-  width: 100%;
+  transition-property: padding-top, padding-bottom, background-color, max-height, box-shadow;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  background: #ffffff00;
   max-height: 105px;
+  box-shadow: 0;
+
+  position: fixed;
+  z-index: 1;
+  width: 100%;
   height: 25vh;
   &_inner {
     margin: 0 auto;
@@ -88,7 +96,9 @@ $top-img-height: 500px;
       max-width: 218px;
       max-height: 75px;
       aspect-ratio: 218 / 75;
-      img {
+      svg {
+        fill: white;
+        transition: fill 1s ease;
         width: 100%;
         height: 100%;
       }
@@ -104,6 +114,7 @@ $top-img-height: 500px;
         display: flex;
       }
       a {
+        transition: color 1s ease;
         color: $light;
         text-decoration: none;
         font-size: 1rem;
@@ -112,12 +123,41 @@ $top-img-height: 500px;
       }
     }
     button {
-      display: block;
+      display: flex;
+      align-items: center;
       @include breakpoint($md) {
         display: none;
       }
       svg {
+        transition: fill 1s ease;
         fill: $light;
+      }
+    }
+  }
+  &[data-little="true"] {
+    padding-top: .3rem;
+    padding-bottom: .3rem;
+    background: #ffffffff;
+    max-height: 60px;
+    box-shadow: 0 3px 45px rgb(0 0 0 / 15%);
+    @include breakpoint($md) {
+      max-height: 80px;
+    }
+    .mainHeader_inner {
+      > a {
+        svg {
+          fill: black;
+        }
+      }
+      nav {
+        a {
+          color: $gray;
+        }
+      }
+      button {
+        svg {
+          fill: $gray;
+        }
       }
     }
   }
@@ -213,6 +253,11 @@ $top-img-height: 500px;
       &:hover {
         color: lighten($sky-blue, 55%);
       }
+    }
+  }
+  &_logo {
+    svg {
+      fill: white;
     }
   }
   &_links {

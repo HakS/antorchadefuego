@@ -4,7 +4,8 @@ import Image from "next/image";
 import { FaFacebook, FaYoutube} from "react-icons/fa";
 import styles from "./Layout.module.scss"
 import topImage from "../assets/images/worship3.jpeg";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
+import SvgLogo from '../components/SvgLogo';
 
 type LayoutProps = {
   fullScreen ?: boolean;
@@ -24,10 +25,22 @@ const MenuLinks = () => {
 }
 
 const Layout = ({fullScreen = false, topContent = '', children}: LayoutProps) => {
-
+  const [littleNavbar, setLittleNavbar] = useState(false);
   const [activeMenu, setActiveMenu] = useState(false);
   const [menuChanging, setMenuChanging] = useState(false);
   let menuTimeout: NodeJS.Timeout;
+
+  const handleScroll = () => {
+    setLittleNavbar(window.scrollY >= 100);
+  };
+
+  useEffect(() => {
+    handleScroll();
+    window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
 
   const toogleMenu = () => {
     if (!activeMenu) {
@@ -78,15 +91,10 @@ const Layout = ({fullScreen = false, topContent = '', children}: LayoutProps) =>
         </nav>
         <div className={styles.pageWrap}>
           <div className={styles.mainWrapper}>
-            <header className={styles.mainHeader}>
+            <header className={styles.mainHeader} data-little={littleNavbar}>
               <div className={styles.mainHeader_inner}>
                 <Link href="/">
-                  <Image
-                    src="/logo.png"
-                    width={218}
-                    height={75}
-                    alt="Iglesia Antorcha de Fuego - Concilio Aposento Alto"
-                  />
+                  <SvgLogo />
                 </Link>
                 <nav>
                   <MenuLinks />
@@ -123,12 +131,7 @@ const Layout = ({fullScreen = false, topContent = '', children}: LayoutProps) =>
               >
                 <div className={styles.footer1}>
                   <div className={styles.footer1_logo}>
-                    <Image
-                      src="/logo.png"
-                      width={218}
-                      height={75}
-                      alt="Iglesia Antorcha de Fuego - Concilio Aposento Alto"
-                    />
+                    <SvgLogo />
                   </div>
                   <div className={styles.footer1_address}>
                     <a
