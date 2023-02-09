@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaFacebook, FaYoutube} from "react-icons/fa";
 import styles from "./Layout.module.scss"
-import topImage from "../assets/images/worship3.jpeg";
+import topImage from "../public/images/worship3.jpeg";
 import React, { useEffect, useState } from "react";
 import SvgLogo from '../components/SvgLogo';
 
