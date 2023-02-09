@@ -34,6 +34,9 @@
       max-width: 600px;
       flex: 1 1 0px;
     }
+    h2 {
+      font-size: 2.5rem;
+    }
   }
 }
 
@@ -68,12 +71,36 @@
 
 .services {
   margin-right: auto;
-  h1 {
+  h2 {
     color: $red;
   }
   ul {
     text-align: left;
     max-width: 400px;
     margin: 0 auto;
+  }
+}
+
+.zone2 {
+  text-align: center;
+  padding: 2rem;
+  background-color: #d8e2ed;
+  color: darken($gray, 15%);
+  margin-top: 4rem;
+  h2 {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 3rem;
+  }
+  h3 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+  &_links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
   }
 }
