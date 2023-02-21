@@ -24,17 +24,19 @@ h1 {
   font-weight: 600;
 }
 h2, h3, h4, h5 {
+  margin-top: 1rem;
   font-weight: 500;
 }
 
 .button {
   text-decoration: none;
   color: white;
-  background-color: $sky-blue;
+  background-color: $red;
   padding: 1rem 1.4rem;
   font-size: 1.4rem;
   transition: background-color 0.3s ease;
+  box-shadow: 0 3px 20px rgb(0 0 0 / 35%);
   &:hover {
-    background-color: darken($sky-blue, 5%);
+    background-color: darken($red, 5%);
   }
 }
