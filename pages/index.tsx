@@ -18,26 +18,31 @@ export default function Home() {
       <Layout fullScreen={true} topContent={topContent}>
         <div className={`page-max-width page-padding ${styles.zone1}`}>
           <section className={styles.aboutUs}>
-            {/* <div className={styles.aboutUs_image}></div> */}
             <h2 className={styles.aboutUs_title}>¡Gusto en conocerte!</h2>
             <div className={styles.aboutUs_content}>
-              Te invitamos a que nos acompañes y que vivas una experienca única en el Señor. Una iglesia con corazón abierto para extender su mano de ayuda a las comunidades, haciendo participe a toda persona y nación de las buenas nuevas de salvación de nuestro Señor Jesucristo.
+              Vive una experienca única en el Señor. Una iglesia con corazón abierto para extender su mano de ayuda a las comunidades.
             </div>
           </section>
           <section className={styles.services}>
             <h2>Servicios</h2>
             <ul>
-              <li>Ayunos: Martes y Sábados 9:30 am</li>
-              <li>Instituto Bíblico: Miércoles 7:30 pm</li>
-              <li>Servicio de Milagros: Viernes 7: 30 pm</li>
-              <li>Reunión de Jóvenes: Sábado 5:30pm</li>
-              <li>Escuela Dominical: 9:00 am</li>
+              <li>Ayunos: Sábados 10:00 am</li>
+              <li>Escuela Dominical: 10:00 am</li>
+            </ul>
+          </section>
+          <section className={styles.online}>
+            <h2>En linea</h2>
+            <ul>
+              <li>Devocional Amanecer en Victoria: Todos los dias 5:00 am</li>
+              <li>Oración Eficaz: Todos los dias 3:00 pm</li>
+              <li>Viernes del Todopoderoso: 9:00 pm</li>
+              <li>Conectados con el Dios del Cielo: Domingos 9:00 pm</li>
             </ul>
           </section>
         </div>
         <section className={styles.zone2}>
           <div className={styles.zone2_image}></div>
-          <h2 className={styles.zone2_title}>El mensaje de Dios a tu alcance</h2>
+          <h2 className={styles.zone2_title}>Haciendo participe a toda persona y nación del Evangelio</h2>
           <h3 className={styles.zone2_subtitle}>Visítanos o conéctate en linea para acompañarnos.</h3>
           <div className={styles.zone2_links}>
             <a className="button" href="https://www.google.com/maps/place/Church+Antorcha+de+Fuego/@11.0182756,-74.804673,19z/data=!4m5!3m4!1s0x8ef42d6c100599b7:0xc146c2b6690fc56a!8m2!3d11.0182756!4d-74.8046731" target="_blank" rel="noreferrer">Visítanos</a>

@@ -23,21 +23,24 @@
   gap: 1rem;
   > * {
     flex: 1 0 100%;
-    padding: 3rem 2.5rem;
-    border-radius: 10px;
+    padding: 3rem 2.2rem;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     @include breakpoint($md) {
       flex: 1 1 0px;
     }
     h2 {
       font-size: 2.5rem;
       margin-top: 0;
+      line-height: 2.3rem;
     }
   }
 }
 
 .aboutUs {
-  background-color: $sky-blue;
+  background: linear-gradient(216deg, rgba(73,184,198,1) 51%, rgba(225,233,77,1) 100%);
   color: white;
   &_title,
   &_content {
@@ -46,8 +49,8 @@
   }
 }
 
-.services {
-  background: lighten($sky-blue, 40%);
+.services,
+.online {
   color: darken($sky-blue, 20%);
   ul {
     text-align: left;
@@ -56,27 +59,35 @@
   }
 }
 
+.services {
+  background: linear-gradient(87deg, rgba(239,151,63,1) 0%, rgba(251,212,70,1) 100%);
+}
+
+.online {
+  background: linear-gradient(0deg, rgba(247,180,112,1) 0%, rgba(225,178,140,1) 24%, rgba(225,192,163,1) 48%, rgba(144,209,241,1) 100%);
+}
+
 .zone2 {
   text-align: center;
-  padding: 3rem 2rem;
+  padding: 5rem 2rem;
   background-color: $light-blue;
-  // color: darken($gray, 15%);
   color: black;
   margin-top: 4rem;
   position: relative;
+  overflow: hidden;
   &_image {
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.3;
     background-image: url('../public/images/worship1.jpeg');
     background-repeat: no-repeat;
     background-position: 50% 20%;
     background-size: cover;
-    filter: contrast(70%) blur(2px);
+    filter: contrast(60%) blur(4px);
     transition: filter 0.4s ease;
+    transform: scale(1.1);
   }
   &_title,
   &_subtitle,
@@ -84,10 +95,17 @@
     position: relative;
     z-index: 1;
   }
+  &_title,
+  &_subtitle {
+    color: white;
+    text-shadow: 0px 4px 9px rgba(0,0,0,0.6);
+  }
   &_title {
     font-size: 3rem;
     font-weight: 600;
-    line-height: 3rem;
+    line-height: 3.4rem;
+    max-width: 800px;
+    margin: 0 auto 2rem;
   }
   &_subtitle {
     font-size: 1.4rem;
