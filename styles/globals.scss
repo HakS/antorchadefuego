@@ -3,6 +3,9 @@
 html,
 body {
   font-family: 'Futura Std', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 button, input[type="submit"], input[type="reset"] {
