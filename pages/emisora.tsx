@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <>
-      <AppHead title="Emisora" />
+      <AppHead title="Emisora Antorcha de Fuego" />
       <Layout topContent="Emisora Antorcha de Fuego">
         <div className={`page-max-width ${styles.radio}`}>
           <div className={styles.radio_audio} onClick={() => handleRadio()}>
