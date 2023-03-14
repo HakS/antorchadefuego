@@ -12,17 +12,28 @@
     width: 100%;
   }
   &_audio {
-    background-color: #4b4b4b;
+    $audioColor: #534f4c;
+    background-color: $audioColor;
     padding: 3vw;
     position: relative;
     box-shadow: 0 3px 45px rgb(0 0 0 / 55%);
     cursor: pointer;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: no-wrap;
     align-items: center;
     color: white;
+    mask-image: linear-gradient(45deg,#000 40%,rgba(0,0,0,.35) 50%,#000 60%);
+    mask-size: 800%;
+    mask-position: 0;
+    transition: mask-position 1.5s ease, background-color 1s ease;
+    &:hover,
+    &[data-active="true"] {
+      background-color: lighten($audioColor, 7.5%);
+      mask-position: 120%;
+    }
     @include breakpoint($md) {
-      padding: 5vw;
+      flex-wrap: wrap;
+      padding: 3vw 10vw;
       flex-basis: 65%;
       width: 65%;
     }
@@ -38,7 +49,7 @@
       font-size: 1.4rem;
       @include breakpoint($md) {
         width: 100%;
-        margin-top: 3rem;
+        margin: 4rem 0 3rem;
         text-align: center;
         font-size: 2rem;
       }

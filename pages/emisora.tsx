@@ -24,6 +24,7 @@ export default function Home() {
             <audio
               src="https://radio30.virtualtronics.com/proxy/antorcha?mp=/stream"
               preload="preload"
+              data-active={isPlaying}
             />
             <img src="/emisora.svg" alt="" />
             <span>
