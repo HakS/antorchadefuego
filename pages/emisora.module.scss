@@ -1,0 +1,62 @@
+@import "../styles/init.scss";
+
+.radio {
+  display: flex;
+  flex-wrap: wrap;
+  @include breakpoint($md) {
+    margin: 5rem auto 3rem;
+  }
+  &_audio,
+  &_livechat {
+    flex-basis: 100%;
+    width: 100%;
+  }
+  &_audio {
+    background-color: #4b4b4b;
+    padding: 3vw;
+    position: relative;
+    box-shadow: 0 3px 45px rgb(0 0 0 / 55%);
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    color: white;
+    @include breakpoint($md) {
+      padding: 5vw;
+      flex-basis: 65%;
+      width: 65%;
+    }
+    img {
+      width: 100px;
+      margin-right: 0.6rem;
+      @include breakpoint($md) {
+        margin-right: 0;
+        width: 100%;
+      }
+    }
+    span {
+      font-size: 1.4rem;
+      @include breakpoint($md) {
+        width: 100%;
+        margin-top: 3rem;
+        text-align: center;
+        font-size: 2rem;
+      }
+    }
+  }
+  &_livechat {
+    @include breakpoint($md) {
+      flex-basis: 35%;
+      width: 35%;
+    }
+  }
+}
+
+.cboxIframe {
+  border: 0;
+  background-color: transparent;
+  height: 500px;
+  @include breakpoint($md) {
+    height: 100%;
+  }
+}
