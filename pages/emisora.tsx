@@ -1,17 +1,42 @@
 import AppHead from '../components/AppHead';
 import Layout from './Layout';
 import styles from "./emisora.module.scss";
-import { useState } from 'react';
+import { useRef, useState } from 'react';
+import { useEffect } from 'react';
 
 export default function Home() {
   const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(null);
+
+  const browserPlay = () => {
+    setIsPlaying(true);
+  }
+  const browserPause = () => {
+    setIsPlaying(false);
+  }
+
+  useEffect(() => {
+    if (audioRef.current) {
+      const audioItem: HTMLMediaElement = audioRef.current;
+      audioItem.removeEventListener('play', browserPlay)
+      audioItem.removeEventListener("pause", browserPause);
+      audioItem.addEventListener('play', browserPlay)
+      audioItem.addEventListener("pause", browserPause);
+      return () => {
+        audioItem.removeEventListener("play", browserPlay);
+        audioItem.removeEventListener("pause", browserPause);
+      }
+    }
+  }, []);
 
   const handleRadio = () => {
+    if (!audioRef.current) return;
+    const audioItem: HTMLMediaElement = audioRef.current;
     if (isPlaying) {
-      setIsPlaying(false);
+      audioItem.pause();
     }
     else {
-      setIsPlaying(true);
+      audioItem.play();
     }
   }
 
@@ -20,11 +45,15 @@ export default function Home() {
       <AppHead title="Emisora Antorcha de Fuego" />
       <Layout topContent="Emisora Antorcha de Fuego">
         <div className={`page-max-width ${styles.radio}`}>
-          <div className={styles.radio_audio} onClick={() => handleRadio()}>
+          <div
+            className={styles.radio_audio}
+            onClick={() => handleRadio()}
+            data-active={isPlaying}
+          >
             <audio
               src="https://radio30.virtualtronics.com/proxy/antorcha?mp=/stream"
               preload="preload"
-              data-active={isPlaying}
+              ref={audioRef}
             />
             <img src="/emisora.svg" alt="" />
             <span>

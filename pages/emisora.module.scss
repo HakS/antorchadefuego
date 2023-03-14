@@ -14,9 +14,10 @@
   &_audio {
     $audioColor: #534f4c;
     background-color: $audioColor;
-    padding: 3vw;
+    padding: 5vw 3vw;
     position: relative;
-    box-shadow: 0 3px 45px rgb(0 0 0 / 55%);
+    // no funciona con mask images
+    // box-shadow: 0 3px 45px rgb(0 0 0 / 55%);
     cursor: pointer;
     display: flex;
     flex-wrap: no-wrap;
@@ -26,10 +27,18 @@
     mask-size: 800%;
     mask-position: 0;
     transition: mask-position 1.5s ease, background-color 1s ease;
-    &:hover,
+    @media(hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: lighten($audioColor, 7.5%);
+        mask-position: 120%;
+      }
+    }
     &[data-active="true"] {
       background-color: lighten($audioColor, 7.5%);
       mask-position: 120%;
+      span {
+        color: white;
+      }
     }
     @include breakpoint($md) {
       flex-wrap: wrap;
@@ -47,6 +56,8 @@
     }
     span {
       font-size: 1.4rem;
+      color: #f1c054;
+      font-weight: 500;
       @include breakpoint($md) {
         width: 100%;
         margin: 4rem 0 3rem;
