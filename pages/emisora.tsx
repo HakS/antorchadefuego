@@ -3,6 +3,7 @@ import Layout from './Layout';
 import styles from "./emisora.module.scss";
 import { useRef, useState } from 'react';
 import { useEffect } from 'react';
+import topImage from "../public/images/bck_emisora.jpeg";
 
 export default function Home() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -43,7 +44,7 @@ export default function Home() {
   return (
     <>
       <AppHead title="Emisora Antorcha de Fuego" />
-      <Layout topContent="Emisora Antorcha de Fuego">
+      <Layout topContent="Emisora Antorcha de Fuego" topImage={topImage}>
         <div className={`page-max-width ${styles.radio}`}>
           <div
             className={styles.radio_audio}

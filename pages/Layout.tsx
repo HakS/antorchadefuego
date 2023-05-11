@@ -1,15 +1,16 @@
 import Head from "next/head";
 import Link from "next/link";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { FaFacebook, FaYoutube} from "react-icons/fa";
 import styles from "./Layout.module.scss"
-import topImage from "../public/images/worship3.jpeg";
+import topImageDefault from "../public/images/worship3.jpeg";
 import React, { useEffect, useState } from "react";
 import SvgLogo from '../components/SvgLogo';
 
 type LayoutProps = {
   fullScreen ?: boolean;
   topContent ?: React.ReactNode | string;
+  topImage ?: StaticImageData;
   children: React.ReactNode;
 };
 
@@ -24,7 +25,7 @@ const MenuLinks = () => {
   );
 }
 
-const Layout = ({fullScreen = false, topContent = '', children}: LayoutProps) => {
+const Layout = ({fullScreen = false, topContent = '', topImage = topImageDefault, children}: LayoutProps) => {
   const [littleNavbar, setLittleNavbar] = useState(false);
   const [activeMenu, setActiveMenu] = useState(false);
   const [menuChanging, setMenuChanging] = useState(false);
