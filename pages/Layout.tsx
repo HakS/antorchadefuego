@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
-import { FaFacebook, FaYoutube} from "react-icons/fa";
+import { FaFacebook, FaYoutube, FaInstagram} from "react-icons/fa";
 import styles from "./Layout.module.scss"
 import topImageDefault from "../public/images/worship3.jpeg";
 import React, { useEffect, useState } from "react";
@@ -22,6 +22,37 @@ const MenuLinks = () => {
       <Link href="/donaciones">Donaciones</Link>
       <Link href="/contacto">Contacto</Link>
     </>
+  );
+}
+
+const SocialLinks = () => {
+  return (
+    <div className={styles.headerSocialLinks}>
+      <a
+        href="https://www.facebook.com/antorchade.fuegoemisora/"
+        target="_blank"
+        rel="noreferrer"
+        className={styles.headerSocialLink}
+      >
+        <FaFacebook />
+      </a>
+      <a
+        href="https://www.instagram.com/emisora_antorchaonline/"
+        target="_blank"
+        rel="noreferrer"
+        className={styles.headerSocialLink}
+      >
+        <FaInstagram />
+      </a>
+      <a
+        href="https://www.youtube.com/channel/UChHN8gsvtH1ZoB1su2JgLAg/"
+        target="_blank"
+        rel="noreferrer"
+        className={styles.headerSocialLink}
+      >
+        <FaYoutube />
+      </a>
+    </div>
   );
 }
 
@@ -66,9 +97,23 @@ const Layout = ({fullScreen = false, topContent = '', topImage = topImageDefault
     <>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#da532c" />
@@ -99,6 +144,7 @@ const Layout = ({fullScreen = false, topContent = '', topImage = topImageDefault
                 </Link>
                 <nav>
                   <MenuLinks />
+                  <SocialLinks />
                 </nav>
                 <button onClick={() => toogleMenu()}>
                   <svg viewBox="0 0 100 80" width="40" height="40">
