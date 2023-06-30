@@ -2,8 +2,10 @@
 
 .topContent {
   height: 100%;
-  color: white;
   background-color: gray;
+  text-align: center;
+  color: $light;
+  position: relative;
   h1 {
     font-size: calc(3.3vw + 1.8rem);
   }
@@ -37,6 +39,18 @@
       max-width: calc(60vw + 150px);
       margin: 0 auto;
     }
+  }
+}
+
+.carouselControls {
+  position: absolute;
+  bottom: 10%;
+  transform: translateX(-50%);
+  left: 50% !important;
+  display: flex;
+  gap: 1rem;
+  > button {
+    font-size: 1.4rem;
   }
 }
 

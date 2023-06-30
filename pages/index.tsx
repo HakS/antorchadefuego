@@ -2,13 +2,15 @@ import Layout from './Layout';
 import styles from './index.module.scss';
 import AppHead from '../components/AppHead';
 
+import { FaChevronCircleLeft, FaChevronCircleRight } from "react-icons/fa";
 import { useSnapCarousel } from "react-snap-carousel";
 import Image from 'next/image';
 
 import img1 from "../public/images/worship3.jpeg";
+import img2 from "../public/images/img2_darkened.jpeg";
 
 export default function Home() {
-  const { scrollRef, pages, activePageIndex, next, prev, goTo } = useSnapCarousel();
+  const { scrollRef, pages, activePageIndex, next, prev } = useSnapCarousel();
 
   const topContent = (
     <div className={styles.topContent}>
@@ -32,6 +34,14 @@ export default function Home() {
           </article>
         </li>
         <li>
+          <figure className="mainImage">
+            <Image
+              src={img2}
+              fill={true}
+              alt="Iglesia Antorcha de Fuego - Concilio Aposento Alto"
+              placeholder="blur"
+            />
+          </figure>
           <article>
             <h1>Isaias 33:6</h1>
             <h2>
@@ -42,6 +52,20 @@ export default function Home() {
           </article>
         </li>
       </ul>
+      <div className={styles.carouselControls}>
+        <button
+          style={{ opacity: activePageIndex == 0 ? 0.4 : 0.7 }}
+          onClick={() => prev()}
+        >
+          <FaChevronCircleLeft />
+        </button>
+        <button
+          style={{ opacity: activePageIndex == (pages.length - 1) ? 0.4 : 0.7 }}
+          onClick={() => next()}
+        >
+          <FaChevronCircleRight />
+        </button>
+      </div>
     </div>
   );
 
