@@ -2,20 +2,53 @@ import Layout from './Layout';
 import styles from './index.module.scss';
 import AppHead from '../components/AppHead';
 
+import { useSnapCarousel } from "react-snap-carousel";
+import Image from 'next/image';
+
+import img1 from "../public/images/worship3.jpeg";
+
 export default function Home() {
+  const { scrollRef, pages, activePageIndex, next, prev, goTo } = useSnapCarousel();
+
   const topContent = (
     <div className={styles.topContent}>
-      <h1>Mateo 17:20</h1>
-      <h2>
-        Porque de cierto os digo, que si tuviereis fe como un grano de mostaza, diréis a este monte: Pásate de aquí allá, y se pasará; y nada os será imposible.
-      </h2>
+      <ul className={`carousel ${styles.carousel}`} ref={scrollRef}>
+        <li>
+          <figure className="mainImage">
+            <Image
+              src={img1}
+              fill={true}
+              alt="Iglesia Antorcha de Fuego - Concilio Aposento Alto"
+              placeholder="blur"
+            />
+          </figure>
+          <article>
+            <h1>Mateo 17:20</h1>
+            <h2>
+              Porque de cierto os digo, que si tuviereis fe como un grano de
+              mostaza, diréis a este monte: Pásate de aquí allá, y se pasará; y
+              nada os será imposible.
+            </h2>
+          </article>
+        </li>
+        <li>
+          <article>
+            <h1>Isaias 33:6</h1>
+            <h2>
+              El será la seguridad de tus tiempos, te dará en abundancia
+              salvación, sabiduría y conocimiento. el temor del Señor será tu
+              tesoro.
+            </h2>
+          </article>
+        </li>
+      </ul>
     </div>
-  )
+  );
 
   return (
     <>
       <AppHead />
-      <Layout fullScreen={true} topContent={topContent}>
+      <Layout fullScreen={true} topContent={topContent} topImage={false} customLayout={true}>
         <div className={`page-max-width page-padding ${styles.zone1}`}>
           <section className={styles.aboutUs}>
             <h2 className={styles.aboutUs_title}>¡Gusto en conocerte!</h2>

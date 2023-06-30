@@ -1,7 +1,5 @@
 @import "../styles/init.scss";
 
-$top-img-height: 500px;
-
 .outerContainer {
   position: relative;
 }
@@ -66,6 +64,13 @@ $top-img-height: 500px;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+
+  [data-full-screen="true"] {
+    height: 100vh;
+    > img {
+      min-height: 100vh;
+    }
+  }
 }
 
 .mainHeader {
@@ -176,31 +181,6 @@ $top-img-height: 500px;
   }
 }
 
-.mainImage {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: $top-img-height;
-  overflow: hidden;
-  z-index: -1;
-  > img {
-    min-height: $top-img-height;
-    width: auto !important;
-    height: auto !important;
-    min-width: 100%;
-    transform: translate(-50%, -50%);
-    top: 50% !important;
-    left: 50% !important;
-  }
-  &[data-full-screen="true"] {
-    height: 100vh;
-    > img {
-      min-height: 100vh;
-    }
-  }
-}
-
 .mainContent {
   overflow: hidden;
   flex-grow: 1;
@@ -218,9 +198,6 @@ $top-img-height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  &[data-full-screen="true"] {
-    height: 100vh;
-  }
 }
 .defaultMainTitle {
   font-size: calc(3.0vw + 1.6rem);

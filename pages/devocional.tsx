@@ -23,12 +23,10 @@ export default function Home() {
       <AppHead title="Devocional" />
       <Layout topContent="Devocional" topImage={topImage}>
         <div className={`page-max-width page-padding`}>
-          <ul className={styles.carousel} ref={scrollRef}>
+          <ul className={`carousel ${styles.carousel}`} ref={scrollRef}>
             {texts.map((text, i) => (
               <li key={i}>
-                <div>
-                  {text}
-                </div>
+                <div>{text}</div>
               </li>
             ))}
           </ul>

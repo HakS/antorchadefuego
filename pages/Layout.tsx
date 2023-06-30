@@ -10,7 +10,8 @@ import SvgLogo from '../components/SvgLogo';
 type LayoutProps = {
   fullScreen ?: boolean;
   topContent ?: React.ReactNode | string;
-  topImage ?: StaticImageData;
+  topImage ?: StaticImageData | false;
+  customLayout ?: boolean;
   children: React.ReactNode;
 };
 
@@ -56,7 +57,7 @@ const SocialLinks = () => {
   );
 }
 
-const Layout = ({fullScreen = false, topContent = '', topImage = topImageDefault, children}: LayoutProps) => {
+const Layout = ({fullScreen = false, topContent = '', topImage = topImageDefault, customLayout = false, children}: LayoutProps) => {
   const [littleNavbar, setLittleNavbar] = useState(false);
   const [activeMenu, setActiveMenu] = useState(false);
   const [menuChanging, setMenuChanging] = useState(false);
@@ -155,15 +156,17 @@ const Layout = ({fullScreen = false, topContent = '', topImage = topImageDefault
                 </button>
               </div>
             </header>
-            <div className={styles.mainImage} data-full-screen={fullScreen}>
-              <Image
-                src={topImage}
-                fill={true}
-                alt="Iglesia Antorcha de Fuego - Concilio Aposento Alto"
-                placeholder="blur"
-              />
-            </div>
-            <div className={styles.topContent} data-full-screen={fullScreen}>
+            {topImage && (
+              <div className={`mainImage`} style={{zIndex: -1}} data-full-screen={fullScreen}>
+                <Image
+                  src={topImage}
+                  fill={true}
+                  alt="Iglesia Antorcha de Fuego - Concilio Aposento Alto"
+                  placeholder="blur"
+                />
+              </div>
+            )}
+            <div className={customLayout ? '' : styles.topContent} data-full-screen={fullScreen}>
               {typeof topContent === "string" ? (
                 <h1 className={styles.defaultMainTitle}>{topContent}</h1>
               ) : (
