@@ -66,23 +66,11 @@ export default function Home() {
           <div className={styles.radio_livechat}>
             <iframe
               className={styles.cboxIframe}
-              src="https://www3.cbox.ws/box/?boxid=3526198&boxtag=ZEMvGR"
-              // src="https://www3.cbox.ws/box/?boxid=3442083&boxtag=2t592t&sec=form"
+              src="https://www3.cbox.ws/box/?boxid=3529746&boxtag=y4ZSsQ"
               width="100%"
               height="100%"
               allow="autoplay"
             ></iframe>
-            {/* <iframe
-              src="https://www3.cbox.ws/box/?boxid=3526198&boxtag=ZEMvGR&sec=form"
-              width="100%"
-              height="450"
-              allowtransparency="yes"
-              allow="autoplay"
-              frameborder="0"
-              marginheight="0"
-              marginwidth="0"
-              scrolling="auto"
-            ></iframe> */}
           </div>
         </div>
       </Layout>

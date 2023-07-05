@@ -3,6 +3,7 @@
 .radio {
   display: flex;
   flex-wrap: wrap;
+  gap: 1rem;
   @include breakpoint($md) {
     margin: 5rem auto 3rem;
   }
@@ -43,8 +44,8 @@
     @include breakpoint($md) {
       flex-wrap: wrap;
       padding: 3vw 10vw;
-      flex-basis: 65%;
-      width: 65%;
+      flex-basis: calc(65% - 1rem);
+      width: calc(65% - 1rem);
     }
     img {
       width: 100px;
