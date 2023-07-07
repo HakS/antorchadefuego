@@ -52,7 +52,8 @@ export default function Home() {
           </article>
         </li>
       </ul>
-      <div className={styles.carouselControls}>
+      {/* TODO: build this as a component */}
+      <div className={`carouselControls ${styles.carouselControls}`}>
         <button
           style={{ opacity: activePageIndex == 0 ? 0.4 : 0.7 }}
           onClick={() => prev()}
@@ -60,7 +61,7 @@ export default function Home() {
           <FaChevronCircleLeft />
         </button>
         <button
-          style={{ opacity: activePageIndex == (pages.length - 1) ? 0.4 : 0.7 }}
+          style={{ opacity: activePageIndex == pages.length - 1 ? 0.4 : 0.7 }}
           onClick={() => next()}
         >
           <FaChevronCircleRight />

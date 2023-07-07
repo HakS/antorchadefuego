@@ -81,3 +81,11 @@ figure {
     background-color: darken($red, 5%);
   }
 }
+
+.carouselControls {
+  display: flex;
+  gap: 1rem;
+  > button {
+    font-size: 1.4rem;
+  }
+}

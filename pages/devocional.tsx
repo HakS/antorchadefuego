@@ -10,6 +10,7 @@ import person3 from "../public/images/person3.jpeg";
 import styles from "./devocional.module.scss";
 import { useSnapCarousel } from "react-snap-carousel";
 import Image from "next/image";
+import { FaChevronCircleLeft, FaChevronCircleRight } from "react-icons/fa";
 
 export default function Home() {
   const { scrollRef, pages, activePageIndex, next, prev, goTo } = useSnapCarousel();
@@ -56,9 +57,7 @@ export default function Home() {
                 <div className={styles.leadContent}>
                   <h2>{lead.name}</h2>
                   <h3>{lead.role}</h3>
-                  <div className={styles.leadText}>
-                    {lead.text}
-                  </div>
+                  <div className={styles.leadText}>{lead.text}</div>
                 </div>
               </div>
             ))}
@@ -72,23 +71,23 @@ export default function Home() {
                 </li>
               ))}
             </ul>
-            <div>
-              {activePageIndex + 1} / {pages.length}
+            {/* TODO: build this as a component */}
+            <div className={`carouselControls ${styles.carouselControls}`}>
+              <button
+                style={{ opacity: activePageIndex == 0 ? 0.4 : 0.7 }}
+                onClick={() => prev()}
+              >
+                <FaChevronCircleLeft />
+              </button>
+              <button
+                style={{
+                  opacity: activePageIndex == pages.length - 1 ? 0.4 : 0.7,
+                }}
+                onClick={() => next()}
+              >
+                <FaChevronCircleRight />
+              </button>
             </div>
-            <button onClick={() => prev()}>Prev</button>
-            <button onClick={() => next()}>Next</button>
-            <ol className={styles.pager}>
-              {pages.map((_, i) => (
-                <li key={i}>
-                  <button
-                    style={i === activePageIndex ? { opacity: 0.5 } : {}}
-                    onClick={() => goTo(i)}
-                  >
-                    {i + 1}
-                  </button>
-                </li>
-              ))}
-            </ol>
           </div>
         </div>
       </Layout>
