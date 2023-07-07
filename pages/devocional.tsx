@@ -49,8 +49,8 @@ export default function Home() {
       <Layout topContent="Devocional" topImage={topImage}>
         <div className={`page-max-width page-padding`}>
           <div className={styles.leads}>
-            {leads.map((lead) => (
-              <div className={styles.lead}>
+            {leads.map((lead, i) => (
+              <div key={i} className={styles.lead}>
                 <div className={styles.leadImage}>
                   <Image src={lead.image} width={350} alt={lead.name} />
                 </div>
